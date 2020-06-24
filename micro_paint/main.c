@@ -4,13 +4,11 @@ int get_area_size(FILE *stream, t_area *area)
 {
 	fscanf(stream, "%d ", &area->width);
 	fscanf(stream, "%d ", &area->height);
-//	fscanf(stream, "%c", &area->backg);
 	fscanf(stream, "%c\n", &area->backg);
 	if (area->height > 300 || area->height < 0)
 		return (-1);
 	if (area->width > 300 || area->width < 0)
 		return (-1);
-	printf("|%d| |%d| |%c|\n", area->width, area->height, area->backg);
 	return (0);
 }
 
@@ -28,11 +26,11 @@ int get_rect_params(FILE *stream, t_rect *rect)
 		return (0);
 	if (fscanf(stream, "%c\n", &rect->bord) == 0)
 		return (0);
-	printf("%c - %f - %f - %f - %f - %c\n", rect->type, rect->x, rect->y, rect->width, rect->height, rect->bord);
 	if (rect->type == 0 || rect->width == 0.0 || rect->height == 0.0)
 		return (0);
 	return (1);
 }
+
 int main(int ac, char **av)
 {
 	FILE *stream;
@@ -57,10 +55,8 @@ int main(int ac, char **av)
 		return (1);
 	while (get_rect_params(stream, &rect))
 	{
-		printf("hi\n");
 		draw_rectangles(buf, &area, &rect);
 		memset(&rect, 0, sizeof(t_rect));
-//		draw_buffer(buf, &area);
 	}
 	draw_buffer(buf, &area);
 	free(buf);

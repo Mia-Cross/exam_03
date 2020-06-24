@@ -30,10 +30,8 @@ void draw_rectangles(char **buf, t_area *area, t_rect *rect)
 	{
 		y = (int)rect->y;
 		h = -1;
-//		printf("%d:%d\n", x, y);
 		while (y >= 0 && y < area->height && ++h < rect->height)
 		{
-//			printf("h = %d / hei = %f (%f)\n", h, rect->height, rect->height - 1.0);
 			if (rect->type == 'R' || h == 0 || h == rect->height - 1.0 || w == 0 || w == rect->width - 1.0)
 				buf[y][x] = rect->bord;
 			y++;
