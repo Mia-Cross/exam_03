@@ -1,0 +1,10 @@
+=== ./a.out ===
+RETURN = 1
+Error: argument$
+=== ./a.out ../my_file ../operation ===
+RETURN = 1
+Error: argument$
+=== ./a.out hello ===
+RETURN = 1
+Error: Operation file corrupted$
+=== ./a.out ../my_file ===
