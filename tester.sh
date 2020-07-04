@@ -1,7 +1,7 @@
 #!/bash
 
 REF_DIR="my_micro_paint4"
-TEST_DIR="my_micro_paint4"
+TEST_DIR="my_micro_paint5"
 
 cd $TEST_DIR
 gcc -Wall -Wextra -Werror *.c *.h
