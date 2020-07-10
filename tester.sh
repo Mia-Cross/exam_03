@@ -1,7 +1,7 @@
 #!/bash
 
 REF_DIR="my_micro_paint4"
-TEST_DIR="my_micro_paint6"
+TEST_DIR="my_micro_paint3"
 
 cd $TEST_DIR
 gcc -Wall -Wextra -Werror *.c *.h
@@ -67,7 +67,7 @@ echo ""
 diff out ../$REF_DIR/out
 
 #Cleanup
-#rm a.out *.gch
+rm a.out *.gch
 
 echo ""
 echo "I told you everything I know ! BYE UwU"
